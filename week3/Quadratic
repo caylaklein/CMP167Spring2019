@@ -1,0 +1,34 @@
+/*
+ * file: Quadratic.java
+ * author: CaylaKlein
+ * created: 2.14.19
+ * description: This program implements quadratic formula
+ */
+ 
+package newDay;
+
+import java.util.Scanner;
+public class Quadratic {
+  public static void main (String[] args) {
+  
+  Scanner scnr = new Scanner (System.in)
+ 
+  double rootOne;
+  double rootTwo;
+  
+  System.out.println("Enter value of a:");
+  double a = scnr.nextDouble();
+  System.out.println("Enter value of b:");
+  double b = scnr.nextDouble();
+  System.out.println("Enter value of c:");
+  double c = scnr.nextDouble();
+  
+  double discriminant = (b * b) - (4 * a * c);
+  
+  rootOne = (-b + Math.sqrt(discriminant)) / (2.0 / a);
+  rootTwo = (-b - Math.sqrt(discriminant)) / (2.0 / a);
+  
+  System.out.println("Root one is: " + rootOne);
+  System.out.println("Root two is: " + rootTwo);
+  }
+ }
