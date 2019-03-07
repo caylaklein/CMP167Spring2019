@@ -1,7 +1,11 @@
-
-package week5;
+/*
+ * Author: CaylaKlein
+ * Desc: fidning the factorial of numbers
+ *Created: 3.7.19
+ */
+package week6;
 import java.util.Scanner;
-public class factorial {
+public class Factorial {
 	public static void main(String [] args) {
 		Scanner scnr = new Scanner(System.in);
 		
