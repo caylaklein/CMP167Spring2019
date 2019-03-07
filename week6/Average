@@ -1,0 +1,29 @@
+/*
+ * Author: CaylaKlein
+ * Desc: fidning the average of the numbers that add up to the natural number
+ *Created: 3.7.19
+ */
+ 
+package week6;
+import java.util.Scanner;
+public class Average {
+	public static void main(String [] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		
+		System.out.println("Enter natural number: ");
+		double n = scnr.nextInt();
+		
+		double valueSum=0;
+		double avgNum=0;
+		
+	
+		
+		for(double i = 1; i<=n; i++) {
+			valueSum = valueSum+i;
+			}
+		avgNum = valueSum/n;
+		System.out.println("Average " + avgNum);
+		
+}
+}
