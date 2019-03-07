@@ -1,0 +1,18 @@
+
+package week5;
+import java.util.Scanner;
+public class factorial {
+	public static void main(String [] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		
+		System.out.print("Enter a natural number: ");
+		int n = scnr.nextInt();
+		int valFac = 1;
+		
+		for(int i = 1; i<=n; i++) {
+			valFac= valFac * i;
+		}
+		System.out.println(valFac+ " ");
+}
+}
