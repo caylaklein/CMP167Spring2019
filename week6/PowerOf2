@@ -1,0 +1,24 @@
+/*
+ * Author: CaylaKlein
+ * Desc: finding two to the power of an inputted number
+ *Created: 3.7.19
+ */
+ 
+ package week5;
+import java.util.Scanner;
+public class PowerOf2 {
+	public static void main(String [] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		System.out.print("Enter exponent for 2: ");
+		double n = scnr.nextInt();
+		double exponentFinal = 0;
+		
+		for(int i = 0; i<=n; i++) {
+			exponentFinal= Math.pow(2.0, i);
+			System.out.println(exponentFinal);
+		}
+		
+
+}
+}
