@@ -1,0 +1,120 @@
+package week7;
+/*
+ * Area.java
+ * CaylaKlein
+ * This program implements area/functions/method
+ * modified: 3.14.19
+ */
+import java.util.Scanner;
+
+public class Area {
+	/*
+	 * CircArea: void
+	 * input: radius
+	 * process: area = pi * radius * radius
+	 * output: area
+	 */
+
+	static Scanner keyboard = new Scanner(System.in);
+
+	
+	
+	
+	
+	/*
+	 * getRectArea: int
+	 * params: width: int, length: int
+	 * calculates rectangle area
+	 */
+	
+	public static int getRecArea(int width, int length) {
+		return width * length;
+	
+	}
+	
+	/*
+	 * getCircArea: double
+	 * params: radius: double
+	 * calculates circle area
+	 */
+	
+	public static double getCircArea(double radius) {
+		return (Math.PI * Math.pow(radius, 2));
+		
+	}
+	
+	/*
+	 * getTriArea: double
+	 * params: base: double, height: double
+	 * calculates triangle area
+	 */
+	
+	public static double getTricArea(double base, double height) {
+		return (0.5 * base * height);
+		
+	}
+	
+	
+	public static void CircArea (){	
+		
+		int radius;
+		double area;
+		
+		System.out.println("Let's calculate circle area");
+		//input
+		System.out.println("Enter radius: ");
+		radius = keyboard.nextInt();
+		//process/calculation
+		area = (Math.PI * Math.pow(radius, 2));
+		//output
+		System.out.println("The area is: " + area);
+	}
+	public static void RectArea (){
+		
+		int width;
+		int length;
+		int area;
+		System.out.println("Let's calculate rectangle area");
+		//input
+		System.out.println("Enter width: ");
+		width = keyboard.nextInt();
+		System.out.println("Enter length: ");
+		length= keyboard.nextInt();
+		//process/calculation
+		area= (length * width);
+		//output
+		System.out.println("The area is: " + area);
+	}
+	public static void TriArea() {
+		
+		int base;
+		int height;
+		double area;
+		
+		System.out.println("Let's calculate triangle area");
+		//input
+		System.out.println("Enter base: ");
+		base = keyboard.nextInt();
+		System.out.println("Enter height: ");
+		height = keyboard.nextInt();
+		//process/calculation
+		area = (0.5 * base * height);
+		//output
+		
+		System.out.println("The area is: " + area);
+	}
+
+	
+	//for debugging
+	public static void main(String [] args) {
+		CircArea(); // function call
+		RectArea();
+		TriArea();
+		
+		System.out.println("Enter width and length: ");
+		int width= keyboard.nextInt();
+		int length= keyboard.nextInt();
+		int area = getRecArea(width, length);
+		System.out.println("Area: " + area);
+	}
+}
