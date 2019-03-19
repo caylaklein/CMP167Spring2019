@@ -1,0 +1,44 @@
+package week8;
+/*
+ * Review.java
+ * CaylaKlein
+ * 3.19.19
+ * Review for midterm
+ */
+import java.util.Scanner;
+public class Methods {
+	
+	static Scanner keyboard = new Scanner(System.in);
+	public static void greet(){
+		
+		System.out.println("Hello, ");
+	}
+	public static void title() {
+		String userName;
+		
+		System.out.println("Enter your name: ");
+		userName = keyboard.next();
+		greet();
+		
+		if (userName.charAt(userName.length() - 1) == 'a' || userName.charAt(userName.length() - 1) == 'e'){
+			System.out.println("Miss " + userName);
+		}
+		else {
+			System.out.println("Mister" + userName);
+		}
+	}
+	public static void greetPeople(int numPeople) {	
+		
+		for (int i = 0; i < numPeople; i++) {
+			title();
+		}
+		
+	}
+	public static void main(String [] args) {
+		System.out.println("Enter number of people: ");
+		int num = keyboard.nextInt();
+		greetPeople(num);
+		
+	}
+
+}
