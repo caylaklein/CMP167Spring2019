@@ -1,0 +1,68 @@
+package chapter5;
+import java.util.Scanner;
+
+public class TelephoneNumber{
+	public static void main(String[] args){
+		Scanner scnr = new Scanner(System.in);
+		
+		String teleLetters;
+        char currentLetter;
+        int i;
+        int maxStringLength = 7;
+        int minStringLength = 0;
+        boolean printADash = true;
+
+
+		System.out.println("Please enter a telephone number using letters : ");
+		teleLetters = scnr.nextLine();
+		for (i = 0; i < teleLetters.length(); i++){
+			currentLetter = teleLetters.charAt(i);
+			if ((minStringLength == 3) && printADash){
+				System.out.print('-');
+				printADash = false;
+			}
+
+			if (currentLetter >= '0' && currentLetter <= '9'){
+				System.out.print(currentLetter);
+				minStringLength++;
+			}
+			else if (((currentLetter >= 'a') && (currentLetter <= 'c')) || ((currentLetter >= 'A') && (currentLetter <= 'C'))) {
+				System.out.print('2');
+				minStringLength++;
+			}
+			else if (((currentLetter >= 'd') && (currentLetter <= 'f')) || ((currentLetter >= 'D') && (currentLetter <= 'F'))) {
+				System.out.print('3');
+				minStringLength++;
+			}
+			else if (((currentLetter >= 'g') && (currentLetter <= 'i')) || ((currentLetter >= 'G') && (currentLetter <= 'I'))) {
+				System.out.print('4');
+				minStringLength++;
+			}
+			else if (((currentLetter >= 'j') && (currentLetter <= 'l')) || ((currentLetter >= 'J') && (currentLetter <= 'L'))) {
+				System.out.print('5');
+				minStringLength++;
+			}
+			else if (((currentLetter >= 'm') && (currentLetter <= 'o')) || ((currentLetter >= 'M') && (currentLetter <= 'O'))) {
+				System.out.print('6');
+				minStringLength++;
+			}
+			else if (((currentLetter >= 'p') && (currentLetter <= 's')) || ((currentLetter >= 'P') && (currentLetter <= 'S'))) {
+				System.out.print('7');
+				minStringLength++;
+			}
+			else if (((currentLetter >= 't') && (currentLetter <= 'v')) || ((currentLetter >= 'T') && (currentLetter <= 'V'))) {
+				System.out.print('8');
+				minStringLength++;
+			}
+			else if (((currentLetter >= 'w') && (currentLetter <= 'z')) || ((currentLetter >= 'W') && (currentLetter <= 'Z'))) {
+				System.out.print('9');
+				minStringLength++;
+			}
+			if (minStringLength == maxStringLength){
+			    break;
+			}
+		}
+		System.out.print("\n");
+
+	}
+}
