@@ -1,0 +1,75 @@
+package chapter5;
+import java.util.Scanner;
+
+public class Grades {
+	public static void main(String [] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		int a = 0;
+		int aNeg = 0;
+		int bPos = 0;
+		int b = 0;
+		int bNeg= 0;
+		int cPos = 0;
+		int c = 0;
+		int cNeg= 0;
+		int d = 0;
+		int f = 0;
+		int grade;
+		int gradeNum = 0;
+		
+		System.out.println("Enter a grade: ");
+		grade = scnr.nextInt();
+		
+		while (gradeNum <= 100 && gradeNum >= 0) {
+			gradeNum++;
+			if ((grade <= 100) && (grade >= 93)) {
+				a++;
+			}
+			else if ((grade <= 92) && (grade >= 90)) {
+				aNeg++;
+			}
+			else if ((grade <= 89) &&(grade >= 87)) {
+				bPos++;
+			}
+			else if ((grade <= 86) &&(grade >= 83)) {
+				b++;
+			}
+			else if ((grade <= 82) &&(grade >= 80)) {
+				bNeg++;
+			}
+			else if ((grade <= 79) &&(grade >= 77)) {
+				cPos++;
+			}
+			else if ((grade <= 76) &&(grade >= 73)) {
+				c++;
+			}
+			else if ((grade <= 72) &&(grade >= 70)) {
+				cNeg++;
+			}
+			else if ((grade <= 69) &&(grade >= 60)) {
+				d++;
+			}
+			else if ((grade <= 59) &&(grade >= 0)) {
+				f++;
+			}
+			else {
+				a++;
+		}
+			System.out.println("Enter a grade: ");
+			grade=scnr.nextInt();
+		}
+		System.out.println("total number of grades = " + gradeNum);
+		System.out.println("Number of A's = " + a);
+		System.out.println("Number of A-'s = " + aNeg);
+		System.out.println("Number of B+'s = " + bPos);
+		System.out.println("Number of B's  = " +b);
+        System.out.println("Number of B-'s = " + bNeg);
+        System.out.println("Number of C+'s = " + cPos);
+        System.out.println("Number of C's  = " + c);
+        System.out.println("Number of C-'s = " + cNeg);
+        System.out.println("Number of D's  = " + d);
+        System.out.println("Number of F's  = " + f);
+
+}
+}
