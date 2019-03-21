@@ -1,0 +1,197 @@
+import java.util.Scanner;
+public class Main {
+   public static void main(String [] args){
+      Scanner scnr = new Scanner(System.in);
+      
+      
+      String userChar = "Y";
+      int operateNum;
+      String operation = "+";
+      String calcMode;
+      double values;
+      double sum = 0;
+      double difference = 0;
+      double product = 1;
+      double quotient = 0;
+      double tan;
+      double sin;
+      double cos;
+      double answer = 0;
+      
+      
+         
+      	while (userChar.equals ("Y")) {
+         System.out.print("Enter the calculator mode: Standard/Scientific");
+         calcMode=scnr.next();
+    	
+    	 
+         if (calcMode.equalsIgnoreCase("Standard")) { 
+             System.out.println("The calculator will operate in " + calcMode + " mode.");
+            	System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division");
+            	operation = scnr.next();
+            		if (!operation.equals("+") && !operation.equals("-") && !operation.equals("*") && !operation.equals("/")) {
+            			System.out.println("Invalid operation entered");
+            			System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division:");
+            			operation = scnr.next();
+            			continue; }
+            }
+            
+            if (calcMode.equalsIgnoreCase("Scientific")) { 
+            	System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division, 'sin' for sin x, 'cos' for cos x, 'tan' for tan x:");
+            	operation = scnr.next();
+            		if (operation.equals("+") && operation.equals("-") && operation.equals("*") && operation.equals("/") && operation.equals("sin") && operation.equals("cos") && operation.equals("tan")) {
+            			System.out.println("Invalid operation entered");
+            			System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division, 'sin' for sin x, 'cos' for cos x, 'tan' for tan x:");
+            			operation = scnr.next();
+            			continue; }
+            } 
+        	 
+        if (calcMode.equals("Standard") && operation.equals("+")){	
+        	System.out.println("How many numbers do you want to add:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	for (int i = 0; i < operateNum; ++i) {
+        		values = scnr.nextDouble();
+        		sum = sum + values;
+        		answer = sum; }
+        	}
+        if (calcMode.equals("Standard") && operation.equals("-")){	
+        	System.out.println("How many numbers do you want to subtract:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	if (operateNum == 2) {
+      			 double numOne = scnr.nextDouble();
+      		     double numTwo = scnr.nextDouble();
+      			difference = numOne - numTwo;
+      			answer = difference; } 
+      		else if (operateNum != 2) {
+      			 double numOne = scnr.nextDouble();
+      		     double numTwo = scnr.nextDouble();
+      			difference = numOne - numTwo;
+      			for (int i = 1; i <= (operateNum - 2); ++i) {
+      				values = scnr.nextDouble();
+      				difference = difference - values;
+      				answer = difference; }
+           	}
+        }
+        if (calcMode.equals("Standard") && operation.equals("*")){	
+        	System.out.println("How many numbers do you want to multiply:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	for (int i = 1; i <= operateNum; ++i) {
+        		values = scnr.nextDouble();
+        		product = product * values;
+        		answer = product; }
+        }
+        if (calcMode.equals("Standard") && operation.equals("/")){	
+        	System.out.println("How many numbers do you want to divide:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	if (operateNum == 2) {
+     			 double numOne = scnr.nextDouble();
+     		     double numTwo = scnr.nextDouble();
+     			quotient = numOne / numTwo;
+     			answer = quotient; } 
+     		else if (operateNum != 2) {
+     			 double numOne = scnr.nextDouble();
+     		     double numTwo = scnr.nextDouble();
+     			quotient = numOne / numTwo;
+     			for (int i = 1; i <= (operateNum - 2); ++i) {
+     				values = scnr.nextDouble();
+     				quotient = quotient / values;
+     				answer = quotient; }
+     			}
+          }
+        
+        if (calcMode.equals("Scientific") && operation.equals("+")){	
+        	System.out.println("How many numbers do you want to add:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	for (int i = 0; i < operateNum; ++i) {
+        		values = scnr.nextDouble();
+        		sum = sum + values;
+        		answer = sum; }
+        }
+        if (calcMode.equals("Scientific") && operation.equals("-")){	
+        	System.out.println("How many numbers do you want to subtract:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	if (operateNum == 2) {
+     			 double numOne = scnr.nextDouble();
+     		     double numTwo = scnr.nextDouble();
+     			difference = numOne - numTwo;
+     			answer = difference; } 
+     		else if (operateNum != 2) {
+     			 double numOne = scnr.nextDouble();
+     		     double numTwo = scnr.nextDouble();
+     			difference = numOne - numTwo;
+     			for (int i = 1; i <= (operateNum - 2); ++i) {
+     				values = scnr.nextDouble();
+     				difference = difference - values;
+     				answer = difference; }
+          	}
+        }
+        if (calcMode.equals("Scientific") && operation.equals("*")){	
+        	System.out.println("How many numbers do you want to multiply:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	for (int i = 1; i <= operateNum; ++i) {
+        		values = scnr.nextDouble();
+        		product = product * values;
+        		answer = product; }
+        }
+        if (calcMode.equals("Scietific") && operation.equals("/")){	
+        	System.out.println("How many numbers do you want to divide:");
+        	operateNum = scnr.nextInt();
+        	System.out.println("Enter " + operateNum + " numbers");
+        	if (operateNum == 2) {
+    			 double numOne = scnr.nextDouble();
+    		     double numTwo = scnr.nextDouble();
+    			quotient = numOne / numTwo;
+    			answer = quotient; } 
+    		else if (operateNum != 2) {
+    			 double numOne = scnr.nextDouble();
+    		     double numTwo = scnr.nextDouble();
+    			quotient = numOne / numTwo;
+    			for (int i = 1; i <= (operateNum - 2); ++i) {
+    				values = scnr.nextDouble();
+    				quotient = quotient / values;
+    				answer = quotient; }
+    			}
+        }
+
+        if (operation.equals("cos") || operation.equals("tan") || operation.equals("sin")) {
+        	System.out.println("Enter a number in radians to find the " + operation);
+        	
+        	if (operation.equals("sin")) {
+             double input = scnr.nextDouble();
+             sin = Math.sin(input); 
+             answer = sin; 
+                }
+          if (operation.equals("cos")) {
+             double input = scnr.nextDouble();
+             cos = Math.cos(input); 
+             answer = cos; 
+                }
+          if (operation.equals("tan")) {
+             double input = scnr.nextDouble();
+             tan = Math.tan(input); 
+             answer = tan; 
+                }  }
+        System.out.println("Result: " + answer);      
+        System.out.println("Do you want to start over? (Y/N)");
+        userChar = scnr.next();
+        if (userChar.equals("N")) {
+            System.out.println("Goodbye");
+       } 
+        
+       }
+     
+   }  
+}
+
+
+
+  
+
+   
