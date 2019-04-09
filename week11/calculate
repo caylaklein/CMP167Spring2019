@@ -1,0 +1,46 @@
+/*
+ * Author: CaylaKlein
+ * Date: 4.9.19
+ * Description: using arrays
+ */
+package week11;
+
+public class calculate {
+	public static int sumList(int[] list) {
+		
+		int total= 0;
+		
+		for (int i=0; i <= list.length-1; i++) {
+		total+=list[i];	
+		}
+		return total;
+	}
+	
+	public static int averageList (int [] iArray1) {
+		int avg=0;
+		avg=sumList(iArray1)/iArray1.length;
+		return avg;
+	}
+	public static int oddElements (int [] iArray2) {
+		int odd=0;
+		
+		for(int i=0; i < iArray2.length; i++) {
+			if(iArray2[i]%2 == 0) {
+			}
+			else {
+				odd++;
+			}
+		}
+		return odd;
+	}
+	// main: For debugging purposes
+	public static void main(String[]args) {
+		int [] iArray1= {1,2,3,4,5};
+		int [] iArray2= {1,2,3,4,5};
+		int sum2 = sumList(iArray2);
+		int avg2 = averageList(iArray2);
+		System.out.printf("The sum of all elements in iArray1" + "is d% \nand the average is %d\n", sumList(iArray1), averageList(iArray1));
+		System.out.printf("The sum of all elements is %d and the average is %d", sum2, avg2);
+	}
+}
+ 
