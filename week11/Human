@@ -1,0 +1,46 @@
+package week11;
+/* 
+ * Author: CaylaKlein
+ * desc:
+ * created: 4.11.19
+ */
+public class Human {
+
+	int age;
+	String name;
+	double wealth;
+	boolean hasVehicle;
+	double hunger;
+	int food;
+	
+	public void grow () {
+		age++;
+	}
+	public void eat () {
+		if(food>0) {
+			hunger--;
+		}
+		else {
+			System.out.println("Nor enough food, please buy food");
+		}
+		}
+		
+	public void work () {
+		if(hunger<5) {
+			wealth+= 25.0;
+		}
+		else {
+			System.out.println("Too hungary to work");
+		}
+	}
+	public void buyFood () {
+		if(wealth>5) {
+			wealth -= 5.0;
+			food++;
+		}
+		else {
+			System.out.println("Not enough money, please work");
+		}
+	}
+
+}
