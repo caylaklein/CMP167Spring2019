@@ -1,0 +1,19 @@
+import java.util.Arrays;
+public class Driver {
+	public static void main(String [] args){
+	   animal a1 = new animal("cow", 2012, 100.5, 'f');
+	   animal a2 = new animal("pig", 2009, 550.5, 'm');
+	   animal a3 = new animal("donkey", 1999, 773.42, 'm');
+	   animal a4 = new animal("sheep", 2016, 164.23, 'f');
+	   animal a5 = new animal("goose", 2004, 10.75, 'f');
+	   
+	   Farm farm = new Farm("farm of ten");
+	   farm.addAnimal(a1);
+	   farm.addAnimal(a2);
+	   farm.addAnimal(a3);
+	   farm.addAnimal(a4);
+	   farm.addAnimal(a5);
+	   farm.printAllDetails();
+	}
+
+}
