@@ -1,0 +1,170 @@
+
+import java.util.Arrays;
+public class Farm {
+
+		public animal[] animals;
+		public String farmName;
+		public int numAnimals;
+
+		public Farm(){
+			this.animals = new animal[10];
+			this.farmName = "";
+			this.numAnimals = 0;
+		}
+		public Farm(String farmName){
+			this.animals = new animal[10];
+			this.farmName = farmName;
+			this.numAnimals = 0;
+		}
+		public Farm(int maxAnimals) {
+			if (maxAnimals<0) {
+				this.animals = new animal[0];
+			}
+			else
+				this.animals = new animal[maxAnimals];
+			this.farmName = "";
+			this.numAnimals = 0;
+		}
+		public Farm(String farmName, int maxAnimals) {
+			if (maxAnimals<0) {
+				this.animals = new animal[0];
+			}
+			else
+				this.animals = new animal[maxAnimals];
+			this.farmName = farmName;
+			this.numAnimals = 0;
+		}
+		public void setFarmName(String name) {
+			this.farmName = name;
+		}
+		public String getFarmName() {
+			return this.farmName;
+		}
+		public void addAnimal(animal a) {
+			if (this.animals[this.animals.length-1] != null) {
+				this.animals = resizeanimalArray(this.animals);
+			}
+			for (int i = 0; i<animals.length; i++) {
+				if (animals[i] == null) {
+					this.animals[i] = a;
+					this.numAnimals++;
+					break;
+				}
+			}
+		}
+		public animal[] resizeanimalArray(animal[] a) {
+			animal[] newAnimals = new animal[a.length*2];
+			for (int i = 0; i<a.length; i++) {
+				newAnimals[i] = a[i];
+			}
+			return newAnimals;
+		}
+		public animal getAnimal(int index) {
+			if (index>(this.numAnimals-1) || index<0) {
+				return null;
+			}
+			else
+				return this.animals[index];
+		}
+		public int getNumAnimals() {
+			return this.numAnimals;
+		}
+		public animal getFirstAnimal() {
+			if (this.animals[0].getName().equals(null)) {
+				return null;
+			}
+			else
+				return this.animals[0];
+		}
+		public animal getLastAnimal() {
+			animal rn = new animal();
+			for (int i = 0; i<this.animals.length; i++) {
+				if (this.animals[i] == null) {
+					if (i ==0) {
+						rn = null;
+					}
+					else
+						rn = this.animals[i-1];
+					break;
+				}
+			}
+			return rn;
+		}
+		public animal[] getAnimals() {
+			return this.animals;
+		}
+		public animal removeAnimal(int index) {
+			if (index<this.numAnimals && index >=0) {
+				animal gone = new animal();
+				gone = this.animals[index];
+				for (int i = index; i<this.numAnimals-1; i++) {
+					this.animals[i] = this.animals[i+1];
+				}
+				numAnimals--;
+				return gone;
+			}
+			else
+				return null;
+		}
+		public void removeAllAnimals() {
+			Arrays.fill(this.animals, null);
+			this.numAnimals = 0;
+		}
+		public double getTotalWeightOfAllAnimals() {
+			double sum = 0.0;
+			for (int i = 0; i<this.numAnimals; i++) {
+				sum += this.animals[i].getWeight();
+			}
+			return sum;
+		}
+		public double getAverageWeightOfAllAnimals() {
+			double avg;
+			double sum = getTotalWeightOfAllAnimals();
+			if (numAnimals>0) {
+				avg = sum/numAnimals;
+			}
+			else
+				avg = 0;
+			return avg;
+		}
+		public int getNumberOfAnimalsAboveWeight(double weight) {
+			int sum = 0;
+			for (int i = 0; i< numAnimals; i++) {
+				if (this.animals[i].getWeight()> weight) {
+					sum++;
+				}
+			}
+			return sum;
+		}
+		public int getNumberOfAnimalsBelowWeight(double weight) {
+			int sum = 0;
+			for (int i = 0; i<numAnimals; i++) {
+				if (this.animals[i].getWeight()<weight) {
+					sum++;
+				}
+			}
+			return sum;
+		}
+		public void increaseWeightOfAllAnimals() {
+			for (int i = 0; i<this.animals.length; i++) {
+				animals[i].gainWeight();
+			}
+		}
+		public void increaseWeightOfAllAnimals(double weight) {
+			for (int i = 0; i<this.animals.length; i++) {
+				this.animals[i].gainWeight(weight);
+			}
+		}
+		public void printAllDetails() {
+			System.out.printf("FarmName: %20s | Number of Animals: %4d | FarmSize: %4d%n", farmName, numAnimals, animals.length);
+			for (int i = 0; i<this.animals.length; i++) {
+				this.animals[i].printDetails();
+
+			}
+
+		}
+
+	}
+
+
+}
