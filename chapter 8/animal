@@ -1,0 +1,112 @@
+
+public class animal {
+
+		public String name;
+		public int birthYear;
+		public double weight;
+		public char gender;
+
+		public animal() {
+			this.name = "";
+			this.birthYear = 1900;
+			this.weight = 0.0;
+			this.gender = 'u';
+		}
+
+		public animal(String name, int birthYear, double weight, char gender) {
+			this.name = name;
+			this.birthYear = birthYear;
+			this.weight = weight;
+			this.gender = gender;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public int getBirthYear() {
+			return this.birthYear;
+		}
+
+		public void setBirthYear(int birthYear) {
+			this.birthYear = birthYear;
+		}
+
+		public double getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(double weight) {
+			if (weight < 0) {
+				weight = -1.0;
+				this.weight = weight;
+			}
+			else {
+				this.weight = weight;
+			}
+		}
+
+		public char getGender() {
+			return this.gender;
+		}
+
+		public void setGender(char gender) {
+			if (this.gender != 'f') {  
+				this.gender = 'u';
+			}
+			else if (this.gender !='m') {
+				this.gender = 'u';
+			}
+			else if (this.gender !='u') {
+				this.gender = 'u';
+			}
+			else {
+				this.gender = gender;
+			}
+		}
+
+		public int calculateAge(int currentYear) {
+			if (birthYear > currentYear) {
+				return -1;
+			} 
+			else {
+				return currentYear - birthYear;
+			}
+		}
+
+		public boolean isMale() {
+			boolean male = false;
+			if (this.gender == 'm') {
+				male = true;
+			}
+			return male;
+		}
+
+		public boolean isFemale() {
+			boolean female = false;
+			if (this.gender == 'f') {
+				female = true;
+			}
+			return female;
+		}
+
+		public void printDetails() {
+			System.out.printf("Name: %20s | Year of Birth: %4d | Weight: %10.2f | Gender: %c\\", getName(), getBirthYear(), getWeight(), getGender());
+		}
+		public void gainWeight() {
+			this.weight += 1;
+		}
+		public void gainWeight(double weight) {
+			this.weight += weight;
+		}
+		public void loseWeight() {
+			this.weight -= 1;
+		}
+		public void loseWeight(double weight) {
+			this.weight -= weight;
+		}
+	}
