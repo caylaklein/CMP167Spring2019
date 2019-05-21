@@ -1,0 +1,142 @@
+import java.util.Scanner;
+public class CopenhagenTransit{
+	public static void main (String [] args){
+		Scanner scnr = new Scanner(System.in);
+int zoneNum;
+		int passengerType;
+		double fare; 
+System.out.println(“Enter Zone number: ”);
+		zoneNum = scnr.nextint();
+		System.out.println(“Enter adult or child: “);
+		passengerType; = scnr.nextint();
+		
+		if (passengerType = = child){
+			if (zoneNum < 2){
+			fare = 11.5;
+			}
+			else if (zoneNum <= 4){
+			fare = 23.0;
+			}
+			else{
+			fare = -1.00;
+			}
+		}
+
+		else {
+			if (zoneNum < 2){
+			fare = 23.0;
+			}
+			else if (zoneNum = 3){
+			fare = 34.5;
+			}
+			else if (zoneNum=4){
+			fare = 46.0;
+			}
+			else{
+			fare = -1.00;
+			}
+		}
+		System.out.print(“The fare for” +  passengarType);
+System.out.print(“ to zone number” + zoneNum);
+System.out.print(“ is” +  fare);
+}
+}
+import java.util.Scanner;
+public class AgeLabel{
+	public static void main (String [] args){
+		Scanner scnr = new Scanner(System.in);
+		
+		Int userAge;
+
+		System.out.print(“Enter age in days: “);
+		userAge = scnr.nextint();
+
+		if (userAge <= (1 * 365)) {
+			System.out.print.ln(“You are an infant”);
+			}
+		else if (userAge <= (3 * 365)) {
+			System.out.print.ln(“You are a toddler”);
+			}
+else if (userAge <= (12 * 365)) {
+			System.out.print.ln(“You are a child”);
+			}
+		else if (userAge <= (19 * 365)) {
+			System.out.print.ln(“You are a teenager”);
+			}
+		else if (userAge <= (21 * 365)) {
+			System.out.print.ln(“You are a young adult”);
+			}
+		else if (userAge <= (50 * 365)) {
+			System.out.print.ln(“You are an adult”);
+			}
+		else if (userAge <= (65 * 365)) {
+			System.out.print.ln(“You are middle aged”);
+			}
+		else{ 
+			System.out.println(“You are a senior citizen”);
+			}
+	}
+}
+
+
+
+
+
+
+
+import java.util.Scanner;
+public class AgeLabel{
+	public static void main (String [] args){
+		Scanner scnr = new Scanner(System.in);
+		int dayNumber;
+		int monthNumber;
+		int date;
+		int year;
+		String monthName = “January”;
+		String dayName = “Sunday”;
+
+		System.out.println(“Enter an integer representing the day: “)’
+		dayNumber = scnr.nextInt();
+		System.out.println(“Enter an integer representing the month: “)’
+		monthNumber= scnr.nextInt();
+		System.out.println(“Enter an integer representing the date: “)’
+		date = scnr.nextInt();
+		System.out.println(“Enter an integer representing the year: “)’
+		year = scnr.nextInt();
+
+		Switch (monthNumber) {
+		case 1: monthName = “January”; 
+		break;
+		case 2: monthName = “February”; 
+		break;
+		case 3: monthName = “March”; 
+		break;
+		case 4: monthName = “April”; 
+		break;
+		case 5: monthName = “May”; 
+		break;
+		case 6: monthName = “June”; 
+		break;
+		case 7: monthName = “July”; 
+		break;
+		case 8: monthName = “August; 
+		break;
+		case 9: monthName = “September”; 
+		break;
+		case 10: monthName = “October”; 
+		break;
+		case 11: monthName = “November”; 
+		break;
+		case 12: monthName = “December”; 
+		break;
+		}
+		
+		If ((date = 31) && (monthNumber = 2) || (monthNumber = 4) || (monthNumber = 6) || (monthNumber = 9) || ((monthNumber = 11){
+			System.out.println(“Invalid date” + monthName + “, does not have” + date “days”);
+		}
+		else if ((date = 31) && (monthNumber == 2){
+			System.out.println(“Invalid date” + monthName + “, does not have” + date “days”);
+		}
+
+		switch(dayNumber){
+		case 1: dayName = “sunday”;9
